@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:jsf="http://xmls.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>All projects</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.xhtml">Home <span class="sr-only">(current)</span></a></li>
+        <li  class="active"><a href="projects.xhtml">All projects</a></li>
+        <li><a href="startProject.xhtml">Launch your project</a></li>
+        <li><a href="signUp.xhtml">Sign up</a></li>
+        <li><a href="connection.xhtml">Connection</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        <h1>Our projects</h1>
+        <div>
+        	<h:dataTable styleClass="table" var="project" value="#{projectController.doSelectAll()}">
+        		<h:column>
+        			<f:facet name="header">Name</f:facet>
+        			#{project.name}
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Category</f:facet>
+        			#{project.category}
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Expected amount</f:facet>
+        			#{project.amountExpected}
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Earned amount</f:facet>
+        			#{project.amountEarned}
+        		</h:column>
+        	</h:dataTable>
+        </div>
+    </body>
+</html>

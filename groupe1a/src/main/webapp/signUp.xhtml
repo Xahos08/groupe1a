@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.xhtml">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">All projects</a></li>
+        <li><a href="projects.xhtml">All projects</a></li>
         <li><a href="startProject.xhtml">Launch your project</a></li>
         <li  class="active"><a href="signUp.xhtml">Sign up</a></li>
         <li><a href="connection.xhtml">Connection</a></li>
@@ -22,49 +22,49 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div>
+<div style="position : absolute;margin-left:-125px;left:50%;">
 <h:form jsf:id="add">
 	<div class="form-group">
 		<label>Name</label>
-		<h:inputText jsf:value="#{userController.name}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.name}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>Firstname</label>
-		<h:inputText  jsf:value="#{userController.firstname}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.firstname}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>birthDate</label>
-		<h:inputText jsf:value="#{userController.birthDate}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.birthDate}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>E-mail</label>
-		<h:inputText jsf:value="#{userController.mail}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.mail}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>Password</label>
-		<h:inputText jsf:value="#{userController.password}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.password}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>Phone number</label>
-		<h:inputText jsf:value="#{userController.phone}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.phone}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>Street</label>
-		<h:inputText jsf:value="#{userController.street}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.street}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>Number</label>
-		<h:inputText jsf:value="#{userController.number}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.number}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>City</label>
-		<h:inputText jsf:value="#{userController.city}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.city}"></h:inputText>
 	</div>
 	<div class="form-group">
 		<label>PostCode</label>
-		<h:inputText jsf:value="#{userController.postCode}"></h:inputText>
+		<h:inputText styleClass="form-control" jsf:value="#{userController.postCode}"></h:inputText>
 	</div>
-	<h:commandButton jsf:action="#{userController.doAdd()}" value="SignUp"></h:commandButton>
+	<h:commandButton styleClass="btn btn-primary" jsf:action="#{userController.doAdd()}" value="SignUp"></h:commandButton>
 </h:form>
 
 
