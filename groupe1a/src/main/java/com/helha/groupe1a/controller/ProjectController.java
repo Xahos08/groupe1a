@@ -8,15 +8,15 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 
+import com.helha.groupe1a.classesEJB.DAOProject;
 import com.helha.groupe1a.entities.Project;
-import com.helha.groupe1a.test.DAO;
 
 @Named
 @ManagedBean(name = "ProjectController")
 @RequestScoped
 public class ProjectController {
 	@EJB
-	private DAO bean;
+	private DAOProject bean;
 	
 	private int id;
 	
@@ -24,21 +24,21 @@ public class ProjectController {
 	private String name;
 	private double amountExpected;
 	private double amountEarned;
-	private Date dateBegin;
-	private Date dateEnd;
+	private String dateBegin;
+	private String dateEnd;
 	
-/*	public ProjectController(){
+	public ProjectController(){
 		
 	}
 	public List<Project> doSelectAll(){
-		return bean.selectAllProject();
+		return bean.selectAll();
 	}
-	public List<Project> doFind() {
-		return bean.getProject(name);
+	public Project doFind() {
+		return bean.find(id);
 	}
 	
 	public void doAdd() {
-		bean.addProject(new Project(category,name,amountExpected,amountEarned,dateBegin,dateEnd));
+		bean.add(new Project(category,name,amountExpected,amountEarned,dateBegin,dateEnd));
 		name = "";
 		category = "";
 		dateBegin = null;
@@ -49,13 +49,7 @@ public class ProjectController {
 	}
 	
 	public void doDelete() {
-		bean.deleteProject(new Project(category,name,amountExpected,amountEarned,dateBegin,dateEnd));
-		name = "";
-		category = "";
-		dateBegin = null;
-		dateEnd=null;
-		amountExpected=0;
-		amountEarned=0;
+		bean.delete(id);
 		id = 0;
 	}
 	
@@ -89,18 +83,16 @@ public class ProjectController {
 	public void setAmountEarned(double amountEarned) {
 		this.amountEarned = amountEarned;
 	}
-	public Date getDateBegin() {
+	public String getDateBegin() {
 		return dateBegin;
 	}
-	public void setDateBegin(Date dateBegin) {
+	public void setDateBegin(String dateBegin) {
 		this.dateBegin = dateBegin;
 	}
-	public Date getDateEnd() {
+	public String getDateEnd() {
 		return dateEnd;
 	}
-	public void setDateEnd(Date dateEnd) {
+	public void setDateEnd(String dateEnd) {
 		this.dateEnd = dateEnd;
 	}
-	
-	*/
 }

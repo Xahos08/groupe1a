@@ -9,24 +9,24 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import com.helha.groupe1a.classesEJB.DAOProject;
-import com.helha.groupe1a.entities.Project;
+import com.helha.groupe1a.classesEJB.DAOUser;
+import com.helha.groupe1a.entities.User;
 
 
 @Path("/api")
-public class RestProject {
+public class RestUser {
 	@EJB
-	DAOProject bean;
+	DAOUser bean;
 	
 	@Path("/selectAll")
 	@GET
-	public List<Project> selectAll() {
+	public List<User> selectAll() {
 		return bean.selectAll();
 	}
 	
 	@Path("/find/{id}")
 	@GET
-	public Project find(@PathParam("id")int id) {
+	public User find(@PathParam("id")int id) {
 		return bean.find(id);
 	}
 	
@@ -38,8 +38,9 @@ public class RestProject {
 	
 	@Path("/add")
 	@POST
-	public Project add(Project p) {
-		bean.add(p);
-		return p;
+	public User add(User u) {
+		bean.add(u);
+		return u;
 	}
+
 }
