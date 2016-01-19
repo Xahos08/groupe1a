@@ -25,37 +25,45 @@
 <form>
 	<div class="form-group">
 		<label for="name">Name</label>
-		<input type="text" class="form-control" id="name" placeholder="Name"/>
+		<input type="text" class="form-control" id="name" placeholder="Name" jsf:value="#{userController.name}"/>
+	</div>
+	<div class="form-group">
+		<label for="firstname">Firstname</label>
+		<input type="text" class="form-control" id="firstname" placeholder="Firstname" jsf:value="#{userController.firstname}"/>
+	</div>
+	<div class="form-group">
+		<label for="birth">birthDate</label>
+		<input type="text" class="form-control" id="birth" placeholder="Date" jsf:value="#{userController.birthDate}"/>
 	</div>
 	<div class="form-group">
 		<label for="mail">E-mail</label>
-		<input type="email" class="form-control" id="mail" placeholder="Mail"/>
+		<input type="email" class="form-control" id="mail" placeholder="Mail" jsf:value="#{userController.mail}"/>
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
-		<input type="password" class="form-control" id="password" placeholder="Password"/>
+		<input type="password" class="form-control" id="password" placeholder="Password" jsf:value="#{userController.password}"/>
 	</div>
 	<div class="form-group">
 		<label for="phone">Phone number</label>
-		<input type="text" class="form-control" id="phone" placeholder="Phone number"/>
+		<input type="text" class="form-control" id="phone" placeholder="Phone number" jsf:value="#{userController.phone}"/>
 	</div>
 	<div class="form-group">
 		<label for="street">Street</label>
-		<input type="text" class="form-control" id="street" placeholder="Street"/>
+		<input type="text" class="form-control" id="street" placeholder="Street"/ jsf:value="#userController.street">
 	</div>
 	<div class="form-group">
 		<label for="number">Number</label>
-		<input type="text" class="form-control" id="number" placeholder="Number"/>
+		<input type="text" class="form-control" id="number" placeholder="Number" jsf:value="#userController.number"/>
 	</div>
 	<div class="form-group">
 		<label for="city">City</label>
-		<input type="text" class="form-control" id="city" placeholder="City"/>
+		<input type="text" class="form-control" id="city" placeholder="City" jsf:value="#userController.city"/>
 	</div>
 	<div class="form-group">
 		<label for="postCode">PostCode</label>
-		<input type="text" class="form-control" id="postCode" placeholder="PostCode"/>
+		<input type="text" class="form-control" id="postCode" placeholder="PostCode" jsf:value="#userController.postCode"/>
 	</div>
-	<button type="submit" class="btn btn-primary" onsubmit="">Start</button>
+	<button type="submit" class="btn btn-primary" jsf:action="#{personneController.doAdd()}">SignUp</button>
 </form>
 
 
