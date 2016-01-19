@@ -5,7 +5,6 @@ import javax.ejb.Stateless;
 
 import com.helha.groupe1a.entities.User;
 import com.helha.groupe1a.interfacesEJB.GestionUserEJBRemote;
-import com.helha.groupe1a.test.DAO;
 
 @Stateless
 public class GestionUserEJB implements GestionUserEJBRemote{
@@ -14,7 +13,7 @@ public class GestionUserEJB implements GestionUserEJBRemote{
 	DAO bean;
 	
 	@Override
-	public void add(User u) {
+	public void addUser(User u) {
 		bean.addUser(u);
 	}
 }
