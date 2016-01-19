@@ -1,6 +1,7 @@
 package com.helha.groupe1a.test;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,24 +18,39 @@ public class Main
 		
 		
 		
+		DAO dao = DAO.getInstance();
 		
+		Project a = null;
+		List<Project> maliste = dao.getProjectsList();
 		
-		EntityManagerFactory emf= Persistence.createEntityManagerFactory("groupe1Local");
-		EntityManager em = emf.createEntityManager();
-		
-		EntityTransaction tx = em.getTransaction();
-		
-		tx.begin();
-		
-	
-		Project p1 = new Project("Categorie","nom",5.,5., new Date(), new Date());
+		for(Project p : maliste)
+		{
+			a = p;
+			System.out.println(p);
+		}
 				
-		em.persist(p1);
-	
-	
-		tx.commit();
 		
-		emf.close();
+		System.out.println("***********************Suppression d'un objet ********************");
+		dao.deleteProject(a);
+		
+		maliste = dao.getProjectsList();
+		
+		for(Project p : maliste)
+		{
+			a = p;
+			System.out.println(p);
+		}
+
+
+
+		
+		
+				
+	
+	
+	
+	
+	
 	}
 		
 	

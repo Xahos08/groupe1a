@@ -91,4 +91,16 @@ public class Project {
 	{
 		return "Project [id=" + id + ", name=" + name + ", category=" + category + ", amountExpected=" + amountExpected + ", amountEarned=" + amountEarned +",dateBegin="+dateBegin+",dateEnd="+dateEnd+"]";
 	}
+	
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj instanceof Project)
+		{
+			Project p = (Project) obj;
+			return p.id == this.id;
+		}
+		return false;
+	}
 }
