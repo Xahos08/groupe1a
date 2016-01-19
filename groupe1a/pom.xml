@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
     <groupId>com.helha</groupId>
-    <artifactId>mProjetJEEg1a</artifactId>
+    <artifactId>groupe1a</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>mProjetJEEg1a</name>
+    <name>groupe1a</name>
 
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

@@ -1,4 +1,4 @@
-package com.helha.entities;
+package com.helha.groupe1a.entities;
 
 import java.util.Date;
 

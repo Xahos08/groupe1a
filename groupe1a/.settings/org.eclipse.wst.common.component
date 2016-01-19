@@ -4,6 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java/com/helha/groupe1"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/ressources"/>
         <property name="java-output-path" value="/groupe1a/target/classes"/>
         <property name="context-root" value="mProjetJEEg1a"/>
     </wb-module>
