@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 
+import com.helha.groupe1a.classesEJB.DAOUser;
 import com.helha.groupe1a.entities.User;
 import com.helha.groupe1a.test.DAO;
 
@@ -16,7 +17,7 @@ import com.helha.groupe1a.test.DAO;
 @RequestScoped
 public class UserController {
 	@EJB
-	private DAO bean;
+	private DAOUser bean;
 	
 	private int id;
 	private String name;
@@ -35,19 +36,29 @@ public class UserController {
 	}
 
 	public List<User> doSelectAll() {
-		return bean.getUsersList();
+		return bean.selectAll();
 	}
 	
 	public User doFind() {
-		return bean.getUserById(id);
+		return bean.find(id);
 	}
 	
 	public void doAdd() {
-		bean.addUser(new User(name, firstname, password, birthDate, phone, mail, street, number, postCode, city));
+		bean.add(new User(name, firstname, password, birthDate, phone, mail, street, number, postCode, city));
+		name="";
+		firstname="";
+		password="";
+		birthDate=null;
+		phone=0; 
+		mail="";
+		street="";
+		number=0;
+		postCode=0;
+		city="";
 	}
 	
 	public void doDelete() {
-		bean.deleteUser(id);
+		bean.delete(id);
 		id = 0;
 	}
 	
