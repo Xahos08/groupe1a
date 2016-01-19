@@ -27,11 +27,11 @@ public class ProjectController {
 	private Date dateBegin;
 	private Date dateEnd;
 	
-	public ProjectController(){
+/*	public ProjectController(){
 		
 	}
 	public List<Project> doSelectAll(){
-		return bean.getProjectsList();
+		return bean.selectAllProject();
 	}
 	public List<Project> doFind() {
 		return bean.getProject(name);
@@ -102,5 +102,5 @@ public class ProjectController {
 		this.dateEnd = dateEnd;
 	}
 	
-	
+	*/
 }

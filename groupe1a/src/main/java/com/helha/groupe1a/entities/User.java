@@ -16,7 +16,7 @@ public class User {
 	private String name;
 	private String firstname;
 	private String password;
-	private Date birthDate;
+	private String birthDate;
 	private int phone; 
 	private String mail;
 	private String street;
@@ -29,7 +29,7 @@ public class User {
 		
 	}
 	
-	public User(String name, String firstname, String password, Date birthDate, int phone, String mail, String street,
+	public User(String name, String firstname, String password, String birthDate, int phone, String mail, String street,
 			int number, int postCode, String city) {
 		super();
 		this.name = name;
@@ -68,11 +68,11 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 

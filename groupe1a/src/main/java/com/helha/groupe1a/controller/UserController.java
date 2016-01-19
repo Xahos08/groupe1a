@@ -22,7 +22,7 @@ public class UserController {
 	private String name;
 	private String firstname;
 	private String password;
-	private Date birthDate;
+	private String birthDate;
 	private int phone; 
 	private String mail;
 	private String street;
@@ -34,20 +34,20 @@ public class UserController {
 		
 	}
 
-	public List<User> doSelectAll() {
+/*	public List<User> doSelectAll() {
 		return bean.getUsersList();
 	}
 	
 	public User doFind() {
 		return bean.getUserById(id);
-	}
+	}*/
 	
 	public void doAdd() {
 		bean.addUser(new User(name, firstname, password, birthDate, phone, mail, street, number, postCode, city));
 	}
 	
 	public void doDelete() {
-		bean.deleteUser(id);
+		//bean.deleteUser(id);
 		id = 0;
 	}
 	
@@ -83,11 +83,11 @@ public class UserController {
 		this.password = password;
 	}
 	
-	public Date getBirthDate(){
+	public String getBirthDate(){
 		return birthDate;
 	}
 	
-	public void setBirthDate(Date birthDate){
+	public void setBirthDate(String birthDate){
 		this.birthDate = birthDate;
 	}
 	

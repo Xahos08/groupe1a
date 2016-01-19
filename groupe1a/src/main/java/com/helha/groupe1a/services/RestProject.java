@@ -15,13 +15,13 @@ import com.helha.groupe1a.test.DAO;
 
 @Path("/api")
 public class RestProject {
-	@EJB
+	/*@EJB
 	DAO bean;
 	
 	@Path("/selectAll")
 	@GET
 	public List<Project> selectAll() {
-		return bean.getProjectsList();
+		return bean.selectAllProject();
 	}
 	@Path("/find/{name}")
 	@GET
@@ -42,5 +42,5 @@ public class RestProject {
 		bean.addProject(p);
 		return p;
 	}
-
+*/
 }

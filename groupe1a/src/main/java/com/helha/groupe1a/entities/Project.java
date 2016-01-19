@@ -18,14 +18,14 @@ public class Project {
 	private String name;
 	private double amountExpected;
 	private double amountEarned;
-	private Date dateBegin;
-	private Date dateEnd;
+	private String dateBegin;
+	private String dateEnd;
 	
 	public Project() {
 		
 	}
 
-	public Project(String category, String name, double amountExpected,double amountEarned,Date dateBegin,Date dateEnd)
+	public Project(String category, String name, double amountExpected,double amountEarned,String dateBegin,String dateEnd)
 	{
 		this.category = category;
 		this.name = name;
@@ -67,19 +67,19 @@ public class Project {
 		this.amountEarned = amountEarned;
 	}
 
-	public Date getDateBegin() {
+	public String getDateBegin() {
 		return dateBegin;
 	}
 
-	public void setDateBegin(Date dateBegin) {
+	public void setDateBegin(String dateBegin) {
 		this.dateBegin = dateBegin;
 	}
 
-	public Date getDateEnd() {
+	public String getDateEnd() {
 		return dateEnd;
 	}
 
-	public void setDateEnd(Date dateEnd) {
+	public void setDateEnd(String dateEnd) {
 		this.dateEnd = dateEnd;
 	}
 
