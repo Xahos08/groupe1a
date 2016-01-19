@@ -21,8 +21,8 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 		   	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://52.19.70.195:3306/db1"/>
 		   	<property name="javax.persistence.schema-generation.database.action" value="create"/>
-		   	<property name="javax.persistence.jdbc.user" value="APP"/>
-		   	<property name="javax.persistence.jdbc.password" value="APP"/>
+		   	<property name="javax.persistence.jdbc.user" value="g1"/>
+		   	<property name="javax.persistence.jdbc.password" value="8841"/>
 		</properties>
 	</persistence-unit>
 </persistence>
