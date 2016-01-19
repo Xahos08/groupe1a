@@ -4,36 +4,26 @@ package com.helha.groupe1a.test;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.helha.groupe1a.entities.Project;
 import com.helha.groupe1a.entities.User;
 
+@Stateless
+@LocalBean
 public class DAO 
 {
-	private EntityManagerFactory emf;
+	@PersistenceContext(unitName = "groupe1")
 	private EntityManager em;
-	private static DAO instance = null;
-	
-	private DAO()
-	{
-		emf = Persistence.createEntityManagerFactory("groupe1Local");
-		em = emf.createEntityManager();
-		
-	}
-	
-	public static DAO getInstance()
-	{
-		if(instance == null)
-			instance = new DAO();
-		return instance;
-	}
-	
-	
+	private EntityManagerFactory emf;
+	private static DAO instance = null;	
 	
 	/**
 	 * Return projects list from database
@@ -180,7 +170,12 @@ public class DAO
 		
 
 	}
-	
+	public void deleteUser(int id) {
+		Query qDelete = em.createQuery("DELETE FROM User u WHERE u.id = ?1");
+		
+		qDelete.setParameter(1, id);
+		qDelete.executeUpdate();
+	}
 	
 	/**
 	 * Research a user by name

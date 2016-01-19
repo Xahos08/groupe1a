@@ -18,7 +18,7 @@ public class Main
 	{
 		
 		
-		
+		/*
 		DAO dao = DAO.getInstance();
 		
 		Project a = null;
@@ -40,7 +40,7 @@ public class Main
 		{
 			a = p;
 			System.out.println(p);
-		}
+		}*/
 
 
 
