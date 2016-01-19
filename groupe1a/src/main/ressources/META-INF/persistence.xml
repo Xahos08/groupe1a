@@ -10,6 +10,8 @@
 		<class>com.helha.groupe1a.entities.User</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
+			<property name="javax.persistence.jdbc.user" value="g1"/>
+			<property name="javax.persistence.jdbc.password" value="8841"/>
 		</properties>
 	</persistence-unit>
 	
