@@ -20,7 +20,7 @@ public class DAO
 	
 	private DAO()
 	{
-		emf = Persistence.createEntityManagerFactory("mPublication");
+		emf = Persistence.createEntityManagerFactory("groupe1Local");
 		em = emf.createEntityManager();
 		
 	}
@@ -47,9 +47,6 @@ public class DAO
 	
 	
 	
-	
-	
-	
 	/**
 	 * Search a project with its name and return the selected list
 	 * @param string nom
@@ -69,6 +66,42 @@ public class DAO
 			if(projects.get(i).getName().equals(name))
 				projectsCopy.add(projects.get(i));	
 
+		}	
+		return projectsCopy;
+	}
+	
+	
+	/**
+	 * Search a project by id
+	 * @param int id
+	 * @return Project
+	 */
+	public Project getProjectById(int id)
+	{
+		Query query = em.createQuery("select p from Project p where p.id ='"+id+"'"); 
+		
+		return (Project) query.getSingleResult();
+	}
+	
+	
+	
+	
+	/**
+	 * Search projects with same category
+	 * @param string category
+	 * @return List<Project>
+	 */
+	public List<Project> getCategoryProjects(String category)
+	{
+		//j'obtiens tous mes publications
+		List<Project> projects = getProjectsList();
+		List<Project> projectsCopy = new ArrayList<Project>(projects.size());
+		
+		//tester si la categorie est celle recherchee
+		for(int i=0;i<projects.size();i++)
+		{
+			if(projects.get(i).getCategory().equals(category))
+				projectsCopy.add(projects.get(i));	
 		}	
 		return projectsCopy;
 	}
@@ -130,6 +163,23 @@ public class DAO
 	}
 	
 	
+	/**
+	 * Add a user to database
+	 * @param User u
+	 * @return true if the user is added, false is not
+	 */
+	public boolean addUser(User u)
+	{
+		EntityTransaction tx = em.getTransaction();				
+		tx.begin();
+		
+		em.persist(u);
+		tx.commit();
+		return true;
+		
+
+	}
+	
 	
 	/**
 	 * Research a user by name
@@ -165,6 +215,38 @@ public class DAO
 			return true;
 		}
 		return false;
+	}
+	
+	
+	/**
+	 * Delete a user from database
+	 * @param User u
+	 * @return true if user is deleted, false is not
+	 */
+	public boolean deleteUser(User u)
+	{
+		EntityTransaction tx = em.getTransaction();	
+		tx.begin();
+		
+		if(u != null)
+		{
+			em.remove(u);
+			tx.commit();
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Search a user by id
+	 * @param int id
+	 * @return User
+	 */
+	public User getUserById(int id)
+	{
+		Query query = em.createQuery("select u from User u where u.id ='"+id+"'"); 
+		
+		return (User) query.getSingleResult();
 	}
 	
 }
