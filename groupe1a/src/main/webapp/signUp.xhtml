@@ -22,50 +22,50 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div style="position : absolute;margin-left:-125px;left:50%;">
-<form jsf:id="add">
+<div>
+<h:form jsf:id="add">
 	<div class="form-group">
-		<label for="name">Name</label>
-		<h:inputText class="form-control" id="name" jsf:value="#{userController.name}"></h:inputText>
+		<label>Name</label>
+		<h:inputText jsf:value="#{userController.name}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="firstname">Firstname</label>
-		<h:inputText class="form-control" id="firstname" jsf:value="#{userController.firstname}"></h:inputText>
+		<label>Firstname</label>
+		<h:inputText  jsf:value="#{userController.firstname}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="birth">birthDate</label>
-		<h:inputText class="form-control" id="birth" jsf:value="#{userController.birthDate}"></h:inputText>
+		<label>birthDate</label>
+		<h:inputText jsf:value="#{userController.birthDate}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="mail">E-mail</label>
-		<h:inputText class="form-control" id="mail" jsf:value="#{userController.mail}"></h:inputText>
+		<label>E-mail</label>
+		<h:inputText jsf:value="#{userController.mail}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="password">Password</label>
-		<h:inputText class="form-control" id="password" jsf:value="#{userController.password}"></h:inputText>
+		<label>Password</label>
+		<h:inputText jsf:value="#{userController.password}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="phone">Phone number</label>
-		<h:inputText class="form-control" id="phone" jsf:value="#{userController.phone}"></h:inputText>
+		<label>Phone number</label>
+		<h:inputText jsf:value="#{userController.phone}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="street">Street</label>
-		<h:inputText class="form-control" id="street" jsf:value="#userController.street"></h:inputText>
+		<label>Street</label>
+		<h:inputText jsf:value="#{userController.street}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="number">Number</label>
-		<h:inputText class="form-control" id="number" jsf:value="#userController.number"></h:inputText>
+		<label>Number</label>
+		<h:inputText jsf:value="#{userController.number}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="city">City</label>
-		<h:inputText class="form-control" id="city" jsf:value="#userController.city"></h:inputText>
+		<label>City</label>
+		<h:inputText jsf:value="#{userController.city}"></h:inputText>
 	</div>
 	<div class="form-group">
-		<label for="postCode">PostCode</label>
-		<h:inputText class="form-control" id="postCode" jsf:value="#userController.postCode"></h:inputText>
+		<label>PostCode</label>
+		<h:inputText jsf:value="#{userController.postCode}"></h:inputText>
 	</div>
-	<h:commandButton type="submit" class="btn btn-primary" jsf:action="#{userController.doAdd()}" value="SignUp"></h:commandButton>
-</form>
+	<h:commandButton jsf:action="#{userController.doAdd()}" value="SignUp"></h:commandButton>
+</h:form>
 
 
 </div>

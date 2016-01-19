@@ -141,4 +141,11 @@ public class UserController {
 	public void setCity(String city){
 		this.city = city;
 	}
+	
+	public String getStreet(){
+		return street;
+	}
+	public void setStreet(String street){
+		this.street = street;
+	}
 }
