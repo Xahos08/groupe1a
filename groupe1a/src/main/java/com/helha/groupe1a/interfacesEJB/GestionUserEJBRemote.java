@@ -6,5 +6,5 @@ import com.helha.groupe1a.entities.User;
 
 @Remote
 public interface GestionUserEJBRemote {
-	public void addUser(User u);
+	public void add(User u);
 }
