@@ -9,6 +9,5 @@ public class ApplicationConfig extends ResourceConfig {
 
 	public ApplicationConfig() {
 		packages("com.helha.groupe1a.services");
-	}
-	
+	}	
 }
