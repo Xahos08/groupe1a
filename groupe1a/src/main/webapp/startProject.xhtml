@@ -1,59 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:jsf="http://xmls.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
         <title>Start a Project</title>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     </head>
     <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="index.xhtml">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="projects.xhtml">All projects</a></li>
-        <li class="active"><a href="startProject.xhtml">Launch your project</a></li>
-        <li><a href="signUp.xhtml">Sign up</a></li>
-        <li><a href="connection.xhtml">Connection</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<h1 class="text-center">I would like create </h1>
-<div style="position : absolute;margin-left:-125px;left:50%;">
-<form>
-	<div class="form-group">
-		<label for="category">a project in category :</label>
-		<select id="category" class="form-control" style="width : 250px;">
-  			<option>Art</option>
-  			<option>BD</option>
-  			<option>Artisanat</option>
-  			<option>Danse</option>
-  			<option>Design</option>
-  			<option>Mode</option>
-  			<option>Cinéma et vidéo</option>
-  			<option>Gastronomie</option>
-  			<option>Jeux</option>
-  			<option>Journalisme</option>
-  			<option>Musique</option>
-  			<option>Photographie</option>
-  			<option>Edition</option>
-  			<option>Technologie</option>
-  			<option>Journalisme</option>
-  			<option>Théâtre</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<label for="name">and with the name :</label>
-		<input type="text" class="form-control" id="name" placeholder="name"/>
-	</div>
-	<button type="submit" class="btn btn-primary" onsubmit="">Start</button>
-</form>
-
-
-</div>
-
-</body>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="index.xhtml">Home<span class="sr-only">(current)</span></a></li>
+		        <li><a href="about.xhtml">About</a></li>
+		        <li><a href="projects.xhtml">All projects</a></li>
+		        <li class="active"><a href="startProject.xhtml">Launch your project</a></li>
+		        <li><a href="signUp.xhtml">Sign up</a></li>
+		        <li><a href="connection.xhtml">Connection</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<h1 class="text-center">I would like create </h1>
+		<div style="position : absolute;margin-left:-125px;left:50%;">
+			<form>
+				<div class="form-group">
+					<label for="category">a project in category :</label>
+					<select id="category" class="form-control" style="width : 250px;">
+			  			<option>Art</option>
+			  			<option>BD</option>
+			  			<option>Artisanat</option>
+			  			<option>Danse</option>
+			  			<option>Design</option>
+			  			<option>Mode</option>
+			  			<option>Cinéma et vidéo</option>
+			  			<option>Gastronomie</option>
+			  			<option>Jeux</option>
+			  			<option>Journalisme</option>
+			  			<option>Musique</option>
+			  			<option>Photographie</option>
+			  			<option>Edition</option>
+			  			<option>Technologie</option>
+			  			<option>Journalisme</option>
+			  			<option>Théâtre</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="name">and with the name :</label>
+					<input type="text" class="form-control" id="name" placeholder="name"/>
+				</div>
+				<h:commandButton class="btn btn-primary" jsf:action="startProject2.xhtml?faces-redirect=true" value="Start"></h:commandButton>
+			</form>
+		</div>
+	</body>
 </html>
