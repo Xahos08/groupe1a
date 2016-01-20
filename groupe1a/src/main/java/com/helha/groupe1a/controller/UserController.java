@@ -1,6 +1,5 @@
 package com.helha.groupe1a.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -10,7 +9,6 @@ import javax.inject.Named;
 
 import com.helha.groupe1a.classesEJB.DAOUser;
 import com.helha.groupe1a.entities.User;
-import com.helha.groupe1a.test.DAO;
 
 @Named
 @ManagedBean(name = "UserController")
