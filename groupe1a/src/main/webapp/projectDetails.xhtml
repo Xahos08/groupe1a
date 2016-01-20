@@ -6,5 +6,11 @@
     </head>
     <body>
         <h1>FIND</h1>
+        <h:dataTable var="personne" value="#{projectController.doFind()}">
+        		<h:column>
+        			<f:facet name="header">Nom</f:facet>
+        			#{project.name}
+        		</h:column>
+        	</h:dataTable>
     </body>
 </html>
