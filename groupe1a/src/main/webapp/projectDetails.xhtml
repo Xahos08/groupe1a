@@ -4,13 +4,31 @@
         <title>FIND</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
     </head>
-    <body>
+    <body onLoad="#{projectController.projectDetails()}">
         <h1>FIND</h1>
-        <h:dataTable var="personne" value="#{projectController.doFind()}">
-        		<h:column>
-        			<f:facet name="header">Nom</f:facet>
-        			#{project.name}
-        		</h:column>
-        	</h:dataTable>
+        <h4>Name</h4>
+        #{projectController.name}
+        <br/>
+        <h4>Category</h4>
+        #{projectController.category}
+        <br/>
+        <h4>Amout expected</h4>
+        #{projectController.amountExpected}€ 
+        <br/>       
+        <h4>Amout earned</h4>
+        #{projectController.amountEarned}€
+        <br/>
+        <h4>Date begin</h4>
+        #{projectController.dateBegin}
+        <br/>
+        <h4>Date end</h4>
+        #{projectController.dateEnd}
+        <br/>
+        <h:form  jsf:id="back">
+				<h4>Back this project</h4>
+				<h:inputText styleClass="form-control" jsf:value="#{projectController.back}"></h:inputText>
+			
+				<h:commandButton styleClass="btn btn-primary" jsf:action="#{projectController.backThisProject(projectController.id)}" value="SignUp"></h:commandButton>
+        </h:form>
     </body>
 </html>

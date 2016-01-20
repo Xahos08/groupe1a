@@ -5,7 +5,10 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.helha.groupe1a.classesEJB.DAOProject;
 import com.helha.groupe1a.entities.Project;
@@ -26,6 +29,9 @@ public class ProjectController {
 	private String dateBegin;
 	private String dateEnd;
 	
+	//Argent payer par un utilisateur
+	private double back;
+
 	public ProjectController(){
 		
 	}
@@ -33,6 +39,9 @@ public class ProjectController {
 		return bean.selectAll();
 	}
 	public Project doFind() {
+		id = 3;
+		bean.find(id);
+		System.out.println(bean.find(id).getName());
 		return bean.find(id);
 	}
 	
@@ -45,6 +54,37 @@ public class ProjectController {
 		amountExpected=0;
 		amountEarned=0;
 		id=0;
+	}
+	
+	public String projectDetails(){
+		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		id = Integer.parseInt(request.getParameter("id"));
+		if(id>0){
+			Project proj;
+			proj = doFind();
+			name = proj.getName();
+			category = proj.getCategory();
+			dateBegin = proj.getDateBegin();
+			dateEnd = proj.getDateEnd();
+			amountExpected = proj.getAmountExpected();
+			amountEarned = proj.getAmountEarned();
+		}else{
+			name = "AUCUNE VALEUR";
+			category = "AUCUNE VALEUR";
+			dateBegin = "AUCUNE VALEUR";
+			dateEnd = "AUCUNE VALEUR";
+			amountExpected = 0;
+			amountEarned = 0;
+		}
+		return "projectDetails.xhtml";
+	}
+	
+	public void backThisProject(int id){
+		Project proj = doFind();
+		System.out.println("*********************ID"+id);
+		back=500;
+		amountEarned = proj.getAmountEarned()+back;
+		bean.setAmountEarned(id, amountEarned);
 	}
 	
 	public void doDelete() {
@@ -93,5 +133,11 @@ public class ProjectController {
 	}
 	public void setDateEnd(String dateEnd) {
 		this.dateEnd = dateEnd;
+	}
+	public double getBack() {
+		return back;
+	}
+	public void setBack(double back) {
+		this.back = back;
 	}
 }

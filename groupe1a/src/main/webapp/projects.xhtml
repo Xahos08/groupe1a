@@ -42,6 +42,7 @@
         			#{project.amountEarned}
         		</h:column>
         		<h:column>
+        			<a href="projectDetails.xhtml?id=#{project.id}">Show details</a>
         			<h:form>
         			<h:commandButton styleClass="btn btn-primary" jsf:action="projectDetails.xhtml" value="Show details"></h:commandButton>
         			</h:form>

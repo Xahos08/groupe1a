@@ -41,4 +41,12 @@ public class DAOProject {
 		qDelete.setParameter(1, id);
 		qDelete.executeUpdate();
 	}
+	
+	public void setAmountEarned(int id, double amountEarned){
+		System.out.println("YOLO"+id+"      "+amountEarned);
+		Query qSetAmountEarned = em.createQuery("UPDATE Project p SET p.amountEarned = ?1 WHERE p.id = ?2 ");
+		qSetAmountEarned.setParameter(1, amountEarned);
+		qSetAmountEarned.setParameter(2, (Integer)id);
+		qSetAmountEarned.executeUpdate();
+	}
 }
