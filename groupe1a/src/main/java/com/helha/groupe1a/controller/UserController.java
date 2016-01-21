@@ -61,11 +61,15 @@ public class UserController {
 	public boolean isConnect(){
 		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		HttpSession session = request.getSession(true);
-		/*
-		id(session.getAttribute("idUser")!=null && session.getAttribute("idUser")!=0){
-			
-		}*/
-		return true;
+		System.out.println("PRESET ID"+session.getAttribute("idUser"));
+		if(session.getAttribute("idUser")!=null){
+			int userID = (int)session.getAttribute("idUser");
+			if(userID > 0){
+				return true;
+			}else{
+				return false;
+			}
+		}else return false;
 	}
 	public String connect(){
 		//Récupération des informations login, mot de passe et confirmation du mot de passe

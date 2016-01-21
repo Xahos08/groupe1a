@@ -40,7 +40,6 @@ public class ProjectController {
 		return bean.selectAll();
 	}
 	public Project doFind() {
-		id = 3;
 		bean.find(id);
 		System.out.println(bean.find(id).getName());
 		return bean.find(id);
