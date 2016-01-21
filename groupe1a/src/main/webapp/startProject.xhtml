@@ -41,21 +41,39 @@
 			</nav>
 		<div style="position : absolute;margin-left:-125px;left:50%;">
 			<h:form jsf:id="addProject">
+				<select id="category" class="form-control" style="width : 250px;">
+			  			<option value="Art">Art</option>
+			  			<option value="BD">BD</option>
+			  			<option value="Artisanat">Artisanat</option>
+			  			<option value="Danse">Danse</option>
+			  			<option value="Design">Design</option>
+			  			<option value="Mode">Mode</option>
+			  			<option value="CinemaEtVideo">Cinéma et vidéo</option>
+			  			<option value="Gastronomie">Gastronomie</option>
+			  			<option value="Jeux">Jeux</option>
+			  			<option value="Journalisme">Journalisme</option>
+			  			<option value="Musique">Musique</option>
+			  			<option value="Photographie">Photographie</option>
+			  			<option value="Edition">Edition</option>
+			  			<option value="Technologie">Technologie</option>
+			  			<option value="Journalisme">Journalisme</option>
+			  			<option value="Theatre">Théâtre</option>
+				</select>
 				<div class="form-group">
 					<label>Name</label>
-					<h:inputText jsf:id="name" styleClass="form-control" ></h:inputText>
+					<h:inputText id="name" styleClass="form-control" ></h:inputText>
 				</div>
 				<div class="form-group">
-					<label>Firstname</label>
-					<h:inputText jsf:id="firstName" styleClass="form-control" ></h:inputText>
+					<label>Date begin</label>
+					<h:inputText id="dateBegin" styleClass="form-control" ></h:inputText>
 				</div>
 				<div class="form-group">
-					<label>birthDate</label>
-					<h:inputText jsf:id="birthDate" styleClass="form-control" ></h:inputText>
+					<label>Date end</label>
+					<h:inputText id="dateEnd" styleClass="form-control" ></h:inputText>
 				</div>
 				<div class="form-group">
-					<label>E-mail</label>
-					<h:inputText jsf:id="eMail" styleClass="form-control" ></h:inputText>
+					<label>Amout expected</label>
+					<h:inputText id="amoutExpected" styleClass="form-control" ></h:inputText>
 				</div>
 				<h:commandButton styleClass="btn btn-primary" jsf:action="#{projectController.doAdd()}" value="SignUp"></h:commandButton>
 			</h:form>	
