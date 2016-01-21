@@ -27,7 +27,7 @@
 						</c:when>
 						<c:otherwise>
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.xhtml">Home<span class="sr-only">(current)</span></a></li>
+								<li><a href="index.xhtml">Home<span class="sr-only">(current)</span></a></li>
 							    <li><a href="about.xhtml">About</a></li>
 							    <li><a href="projects.xhtml">All projects</a></li>
 							    <li class="active"><a href="startProject.xhtml">Launch your project</a></li>
@@ -39,36 +39,26 @@
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
 			</nav>
-		<h1 class="text-center">I would like create </h1>
 		<div style="position : absolute;margin-left:-125px;left:50%;">
-			<form>
+			<h:form jsf:id="addProject">
 				<div class="form-group">
-					<label for="category">a project in category :</label>
-					<select id="category" class="form-control" style="width : 250px;">
-			  			<option>Art</option>
-			  			<option>BD</option>
-			  			<option>Artisanat</option>
-			  			<option>Danse</option>
-			  			<option>Design</option>
-			  			<option>Mode</option>
-			  			<option>Cinéma et vidéo</option>
-			  			<option>Gastronomie</option>
-			  			<option>Jeux</option>
-			  			<option>Journalisme</option>
-			  			<option>Musique</option>
-			  			<option>Photographie</option>
-			  			<option>Edition</option>
-			  			<option>Technologie</option>
-			  			<option>Journalisme</option>
-			  			<option>Théâtre</option>
-					</select>
+					<label>Name</label>
+					<h:inputText jsf:id="name" styleClass="form-control" ></h:inputText>
 				</div>
 				<div class="form-group">
-					<label for="name">and with the name :</label>
-					<input type="text" class="form-control" id="name" placeholder="name"/>
+					<label>Firstname</label>
+					<h:inputText jsf:id="firstName" styleClass="form-control" ></h:inputText>
 				</div>
-				<h:commandButton class="btn btn-primary" jsf:action="startProject2.xhtml?faces-redirect=true" value="Start"></h:commandButton>
-			</form>
-		</div>
+				<div class="form-group">
+					<label>birthDate</label>
+					<h:inputText jsf:id="birthDate" styleClass="form-control" ></h:inputText>
+				</div>
+				<div class="form-group">
+					<label>E-mail</label>
+					<h:inputText jsf:id="eMail" styleClass="form-control" ></h:inputText>
+				</div>
+				<h:commandButton styleClass="btn btn-primary" jsf:action="#{projectController.doAdd()}" value="SignUp"></h:commandButton>
+			</h:form>	
+		</div>	
 	</body>
 </html>
