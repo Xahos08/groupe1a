@@ -31,6 +31,8 @@ public class Project {
 
 	public Project(String category, String name, double amountExpected,double amountEarned,String dateBegin,String dateEnd)
 	{
+		user = new User();
+		
 		this.category = category;
 		this.name = name;
 		this.amountExpected = amountExpected;
@@ -91,12 +93,20 @@ public class Project {
 		return id;
 	}
 	
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+	
 	public String toString()
 	{
 		return "Project [id=" + id + ", name=" + name + ", category=" + category + ", amountExpected=" + amountExpected + ", amountEarned=" + amountEarned +",dateBegin="+dateBegin+",dateEnd="+dateEnd+"]";
 	}
 	
 	
+	public void setUser(User user){
+		this.user = user;
+	}
 	@Override
 	public boolean equals(Object obj)
 	{

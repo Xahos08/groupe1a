@@ -33,6 +33,11 @@ public class RestServices {
 		return beanUser.selectAll();
 	}
 	
+	@Path("/connectUser/{mail}/{password}")
+	public User connectUser(@PathParam("mail")String mail,@PathParam("password")String password)
+	{
+		return beanUser.connect(mail,password);
+	}
 	@Path("/findUser/{id}")
 	@GET
 	public User findUser(@PathParam("id")int id) {

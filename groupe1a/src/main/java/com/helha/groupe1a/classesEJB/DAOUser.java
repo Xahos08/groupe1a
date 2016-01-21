@@ -22,6 +22,19 @@ public class DAOUser {
 		em.persist(u);
 	}
 	
+	public User connect(String mail,String password)
+	{
+		Query qConnect = em.createQuery("SELECT u FROM User u WHERE u.id = 6 ");
+		
+		//qConnect.setParameter(1, mail);
+		//qConnect.setParameter(2, password);
+		
+		//try {
+			return (User) qConnect.getSingleResult();
+		//} catch (NoResultException e) {
+		//	return null;
+		//}
+	}
 	public List<User> selectAll() {
 		Query qSelectAll = em.createQuery("SELECT u FROM User u");
 		
