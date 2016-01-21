@@ -103,6 +103,9 @@ public class Project {
 		return "Project [id=" + id + ", name=" + name + ", category=" + category + ", amountExpected=" + amountExpected + ", amountEarned=" + amountEarned +",dateBegin="+dateBegin+",dateEnd="+dateEnd+"]";
 	}
 	
+	public User getUser(){
+		return user;
+	}
 	
 	public void setUser(User user){
 		this.user = user;
