@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -32,7 +33,24 @@ public class DAOUser {
 		
 		qFind.setParameter(1, id);
 		
-		return (User) qFind.getSingleResult();
+		try {
+			return (User) qFind.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+	
+	public User find(String mail) {
+		System.out.println("WTF - "+mail);
+		
+		Query qFind = em.createQuery("SELECT u FROM User u WHERE u.mail = ?1");
+
+		qFind.setParameter(1, mail);
+		try {
+			return (User) qFind.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}		
 	}
 	
 	public void delete(int id) {

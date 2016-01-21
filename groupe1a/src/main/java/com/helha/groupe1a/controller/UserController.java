@@ -5,7 +5,10 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.helha.groupe1a.classesEJB.DAOUser;
 import com.helha.groupe1a.entities.User;
@@ -16,7 +19,7 @@ import com.helha.groupe1a.entities.User;
 public class UserController {
 	@EJB
 	private DAOUser bean;
-	
+	private User userConnected;
 	private int id;
 	private String name;
 	private String firstname;
@@ -53,6 +56,34 @@ public class UserController {
 		number=0;
 		postCode=0;
 		city="";
+	}
+	
+	public boolean isConnect(){
+		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		HttpSession session = request.getSession(true);
+		/*
+		id(session.getAttribute("idUser")!=null && session.getAttribute("idUser")!=0){
+			
+		}*/
+		return true;
+	}
+	public String connect(){
+		//Récupération des informations login, mot de passe et confirmation du mot de passe
+		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		
+		String rEmail    = (String)request.getParameter("loginUser:email");
+		String rPassword = (String)request.getParameter("loginUser:password");
+
+		userConnected = bean.find(rEmail);
+		
+		if(userConnected != null){
+			HttpSession session = request.getSession(true);
+			session.setAttribute("idUser",userConnected.getId());
+			System.out.println("ID SESSION"+session.getAttribute("idUser"));
+		}else{
+			System.out.println("L'utilisateur n'existe pas");
+		}
+		return "index.xhtml";
 	}
 	
 	public void doDelete() {

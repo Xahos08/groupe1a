@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.helha.groupe1a.classesEJB.DAOProject;
 import com.helha.groupe1a.entities.Project;
@@ -76,17 +77,19 @@ public class ProjectController {
 			amountExpected = 0;
 			amountEarned = 0;
 		}
+		HttpSession session = request.getSession(true);
+		System.out.println("ID SESSION AGAIN"+session.getAttribute("idUser"));
 		return "projectDetails.xhtml";
 	}
 	
 	public String backThisProject(){
 		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		String backStr = (String)request.getParameter("giveback:back");
-		System.out.println("************BACK_STR"+backStr);
+		//System.out.println("************BACK_STR"+backStr);
 		back = Integer.parseInt(backStr);
 		Project proj = doFind();
-		System.out.println("*********************ID"+id);
-		System.out.println("*********************back"+back);
+		//System.out.println("*********************ID"+id);
+		//System.out.println("*********************back"+back);
 		//System.out.println("*********************ID"+nid);
 		amountEarned = proj.getAmountEarned()+back;
 		bean.setAmountEarned(id, amountEarned);

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -31,8 +32,11 @@ public class DAOProject {
 		Query qFind = em.createQuery("SELECT p FROM Project p WHERE p.id = ?1");
 		
 		qFind.setParameter(1, id);
-		
-		return (Project) qFind.getSingleResult();
+		try {
+			return (Project) qFind.getSingleResult();
+		}catch(NoResultException e){
+			return null;
+		}
 	}
 	
 	public void delete(int id) {
