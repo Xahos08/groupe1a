@@ -79,12 +79,18 @@ public class ProjectController {
 		return "projectDetails.xhtml";
 	}
 	
-	public void backThisProject(int id){
+	public String backThisProject(){
+		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		String backStr = (String)request.getParameter("giveback:back");
+		System.out.println("************BACK_STR"+backStr);
+		back = Integer.parseInt(backStr);
 		Project proj = doFind();
 		System.out.println("*********************ID"+id);
-		back=500;
+		System.out.println("*********************back"+back);
+		//System.out.println("*********************ID"+nid);
 		amountEarned = proj.getAmountEarned()+back;
 		bean.setAmountEarned(id, amountEarned);
+		return "projects.xhtml";
 	}
 	
 	public void doDelete() {
