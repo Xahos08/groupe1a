@@ -61,9 +61,9 @@ public class UserController {
 	public boolean isConnect(){
 		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		HttpSession session = request.getSession(true);
-		System.out.println("PRESET ID"+session.getAttribute("idUser"));
 		if(session.getAttribute("idUser")!=null){
 			int userID = (int)session.getAttribute("idUser");
+			System.out.println("Au chargement d'index l'idUser : "+userID);
 			if(userID > 0){
 				return true;
 			}else{
@@ -79,15 +79,22 @@ public class UserController {
 		String rPassword = (String)request.getParameter("loginUser:password");
 
 		userConnected = bean.find(rEmail);
-		
+		System.out.println("L'utilisateur se connecte :"+userConnected.getId());
 		if(userConnected != null){
 			HttpSession session = request.getSession(true);
-			session.setAttribute("idUser",userConnected.getId());
-			System.out.println("ID SESSION"+session.getAttribute("idUser"));
+			session.setAttribute("idUser", userConnected.getId());
+			System.out.println("Et la session est set à :"+session.getAttribute("idUser"));
 		}else{
 			System.out.println("L'utilisateur n'existe pas");
 		}
 		return "index.xhtml";
+	}
+	
+	public String logout(){
+		HttpServletRequest request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		HttpSession session = request.getSession(true);
+		session.setAttribute("idUser", 0);
+		return "logout.xhtml";
 	}
 	
 	public void doDelete() {
